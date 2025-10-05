@@ -1,0 +1,26 @@
+<%- include("partials/header.ejs",{title:"Predicted Weather"})%>
+
+<h2>Current Weather</h2>
+<p>Temperature:<%= current.temperature%>°C</p>
+<p>Wind Speed:<%=current.windspeed%>km/hr</p>
+<p>Time:<%= current.time%></p>
+
+<h2>Hourly Forecast(next few hrs)</h2>
+
+
+<table border="1" cellpadding="5">
+    <tr>
+        <th>Time</th>
+        <th>Temp(°C)</th>
+        <th>Wind Speed(km/hr)</th>
+    </tr>
+    <% for(let i=0;i<hourly.time.length && i < 12;i++) { %>
+        <tr>
+           <td><%= hourly.time[i] %></td> 
+           <td><%= hourly.temperature_2m[i] %></td> 
+           <td><%= hourly.wind_speed_10m[i] %></td> 
+        </tr>
+        <% } %>
+    </table>
+
+    <%- include("partials/footer.ejs")%>

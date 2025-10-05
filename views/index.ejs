@@ -1,0 +1,10 @@
+<%- include('partials/header.ejs' , {title:'Home'}) %>
+<h2>Enter Location</h2>
+<form action = "/weather" method="GET">
+    <label for="latitude">Latitude:</label>
+    <input type="text" id="latitude" name="latitude" placeholder="eg.13.988" required/>
+    <label for ="longitude">Longitude:</label>
+    <input type="text" id="longitude" name="longitude" placeholder="eg.13.988" required/>
+    <button type="submit">SUBMIT</button>
+</form>
+<%- include("partials/footer.ejs")%>
